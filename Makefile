@@ -6,7 +6,7 @@
 #    By: fserlut <fserlut@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/11 23:10:24 by fserlut           #+#    #+#              #
-#    Updated: 2019/04/13 20:00:45 by fserlut          ###   ########.fr        #
+#    Updated: 2019/04/13 21:08:38 by fserlut          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ FLAGC = -Wall -Wextra -Werror
 all: $(NAME)
 
 $(NAME):
-	gcc $(FLAGC) -I $(HEAD_FOLDER) -c $(SRC) 
+	gcc -I $(HEAD_FOLDER) -c $(SRC) $(FLAGC)
 	ar rc $(NAME) $(FILE_O)
 	ranlib $(NAME)
 
