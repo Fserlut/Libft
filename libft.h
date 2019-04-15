@@ -6,7 +6,7 @@
 /*   By: fserlut <fserlut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/10 23:09:51 by fserlut           #+#    #+#             */
-/*   Updated: 2019/04/14 02:12:08 by fserlut          ###   ########.fr       */
+/*   Updated: 2019/04/15 06:15:40 by fserlut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,17 @@ char	*ft_strncat(char *restrict s1, const char *restrict s2, size_t n);
 size_t	ft_strlcat(char *restrict dst, const char *restrict src, size_t size);
 char	*strrchr(const char *s, int c);
 int		strncmp(const char *s1, const char *s2, size_t n);
+void	*ft_memalloc(size_t size);
+void	ft_memdel(void **ap);
+char	*ft_strnew(size_t size);
+void	ft_bzero(void *s, size_t n);
+void	ft_strdel(char **as);
+void	ft_strclr(char *s);
+void	ft_striter(char *s, void (*f)(char *));
+void	ft_striteri(char *s, void (*f)(unsigned int, char *));
+int		ft_strequ(char const *s1, char const *s2);
+int		ft_strnequ(char const *s1, char const *s2, size_t n);
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
+char	*ft_strsub(char const *s, unsigned int start, size_t len);
 
 #endif
