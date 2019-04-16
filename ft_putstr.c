@@ -1,29 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fserlut <fserlut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/12 01:06:38 by fserlut           #+#    #+#             */
-/*   Updated: 2019/04/16 04:19:52 by fserlut          ###   ########.fr       */
+/*   Created: 2019/04/16 02:41:38 by fserlut           #+#    #+#             */
+/*   Updated: 2019/04/16 02:45:37 by fserlut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <string.h>
-/**
-void	*ft_memmove(void *dst, const void *src, size_t len)
-{
-	unsigned char *ptr;
-	unsigned char *ptr2;
 
-	ptr = (unsigned char*)dst;
-	ptr2 = (unsigned char*)src;
-	while (len-- > 0)
-		*ptr++ = *ptr2++;
-	*ptr = '\0';
-	return (dst);
+void	ft_putstr(char *s)
+{
+	while (*s)
+		ft_putchar(*(s++));
 }
-**/

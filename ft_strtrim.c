@@ -1,40 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fserlut <fserlut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/12 02:04:55 by fserlut           #+#    #+#             */
-/*   Updated: 2019/04/16 04:36:05 by fserlut          ###   ########.fr       */
+/*   Created: 2019/04/16 00:34:30 by fserlut           #+#    #+#             */
+/*   Updated: 2019/04/16 02:50:28 by fserlut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
-#include <string.h>
-
-void	*ft_memchr(const void *s, int c, size_t n)
+/**
+char		*ft_strtrim(char const *s)
 {
-	while (n-- > 0)
+	int		i;
+	char	*s_new;
+
+	i = ft_strlen(s);
+	s_new = ft_strnew(i);
+	if (s_new != NULL)
 	{
-		if (*(unsigned char*)s == (unsigned char)c)
-			return ((unsigned char*)s);
-		s++;
+		ft_strcpy(s_new, s);
+		if ((s_new[0] == ' ') || (s_new[0] == '\t') || (s_new[0] == '\n'))
+			s_new[0] = 'A';
+		if ((s_new[i] == ' ') || (s_new[i] == '\t') || (s_new[i] == '\n'))
+			s_new[i] = 'A';
+		else
+		return ((char*)s);
 	}
-	return (NULL);
+	else
+		return (NULL);
 }
 
 int		main()
 {
-	int c;
-	void *s;
-	size_t n;
+	char *s;
 
-	c = '9';
-	s = "Helloh,jhbhv7098776";
-	n = 100;
-	printf("My: %s\n", ft_memchr(s, c, n));
-	printf("Sys: %s\n", memchr(s, c, n));
+	s = "\tHello\n";
+	printf("%s\n", ft_strtrim(s));
 	return (0);
 }
+**/

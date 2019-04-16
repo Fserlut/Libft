@@ -6,7 +6,7 @@
 /*   By: fserlut <fserlut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/10 23:09:51 by fserlut           #+#    #+#             */
-/*   Updated: 2019/04/15 06:15:40 by fserlut          ###   ########.fr       */
+/*   Updated: 2019/04/16 02:51:43 by fserlut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,12 @@ int		ft_strequ(char const *s1, char const *s2);
 int		ft_strnequ(char const *s1, char const *s2, size_t n);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_strsub(char const *s, unsigned int start, size_t len);
+char	*strnstr(const char *haystack, const char *needle, size_t len);
+char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strtrim(char const *s);
+void	ft_putchar(char c);
+void	ft_putstr(char *s);
+void	ft_putendl(char const *s);
+void	ft_putnbr(int n);
 
 #endif

@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fserlut <fserlut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/12 01:06:38 by fserlut           #+#    #+#             */
-/*   Updated: 2019/04/16 04:19:52 by fserlut          ###   ########.fr       */
+/*   Created: 2019/04/15 23:11:25 by fserlut           #+#    #+#             */
+/*   Updated: 2019/04/15 23:53:37 by fserlut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <string.h>
-/**
-void	*ft_memmove(void *dst, const void *src, size_t len)
-{
-	unsigned char *ptr;
-	unsigned char *ptr2;
 
-	ptr = (unsigned char*)dst;
-	ptr2 = (unsigned char*)src;
-	while (len-- > 0)
-		*ptr++ = *ptr2++;
-	*ptr = '\0';
-	return (dst);
+char		*ft_strjoin(char const *s1, char const *s2)
+{
+	int		len;
+	char	*s_new;
+
+	len = ft_strlen(s1) + ft_strlen(s2);
+	s_new = ft_strnew(len);
+	if (!(s_new == NULL))
+	{
+		ft_strcpy(s_new, s1);
+		ft_strcat(s_new, s2);
+		return (s_new);
+	}
+	return (NULL);
 }
-**/
