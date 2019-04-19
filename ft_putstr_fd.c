@@ -1,25 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fserlut <fserlut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/11 06:12:09 by fserlut           #+#    #+#             */
-/*   Updated: 2019/04/18 19:49:10 by fserlut          ###   ########.fr       */
+/*   Created: 2019/04/19 19:53:50 by fserlut           #+#    #+#             */
+/*   Updated: 2019/04/19 20:11:54 by fserlut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <unistd.h>
 
-void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
+void	ft_putstr_fd(char const *s, int fd)
 {
-	unsigned char *ptr;
-	unsigned char *ptr2;
-
-	ptr = (unsigned char*)dst;
-	ptr2 = (unsigned char*)src;
-	while (n-- > 0)
-		*ptr++ = *ptr2++;
-	return (dst);
+	write(fd, s, ft_strlen(s));
 }

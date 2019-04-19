@@ -6,7 +6,7 @@
 /*   By: fserlut <fserlut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/10 23:09:51 by fserlut           #+#    #+#             */
-/*   Updated: 2019/04/16 02:51:43 by fserlut          ###   ########.fr       */
+/*   Updated: 2019/04/19 20:28:41 by fserlut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,5 +62,11 @@ void	ft_putchar(char c);
 void	ft_putstr(char *s);
 void	ft_putendl(char const *s);
 void	ft_putnbr(int n);
+char 	**ft_strsplit(char const *s, char c);
+char    *ft_itoa(int n);
+void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char const *s, int fd);
+void	ft_putendl_fd(char const *s, int fd);
+void	ft_putnbr_fd(int n, int fd);
 
 #endif

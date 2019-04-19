@@ -6,7 +6,7 @@
 /*   By: fserlut <fserlut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/16 02:51:31 by fserlut           #+#    #+#             */
-/*   Updated: 2019/04/16 04:17:13 by fserlut          ###   ########.fr       */
+/*   Updated: 2019/04/19 16:49:18 by fserlut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,15 +23,3 @@ void	ft_putnbr(int n)
 		ft_putnbr(n / 10);
 	ft_putchar((n % 10) + '0');
 }
-
-
-int		main(void)
-{
-	int n;
-
-	n = 11;
-	ft_putnbr(n);
-	return (0);
-}
-
-

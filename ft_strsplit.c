@@ -1,25 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strsplit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fserlut <fserlut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/11 06:12:09 by fserlut           #+#    #+#             */
-/*   Updated: 2019/04/18 19:49:10 by fserlut          ###   ########.fr       */
+/*   Created: 2019/04/19 18:46:15 by fserlut           #+#    #+#             */
+/*   Updated: 2019/04/19 19:42:50 by fserlut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
+/**int     replace_char(char const *s, char c)
 {
-	unsigned char *ptr;
-	unsigned char *ptr2;
+	int i;
+	int count;
+	int fg;
 
-	ptr = (unsigned char*)dst;
-	ptr2 = (unsigned char*)src;
-	while (n-- > 0)
-		*ptr++ = *ptr2++;
-	return (dst);
+	fg = 0;
+	count = 0;
+	i = 0;
+	while (s[i] != '\0')
+	{
+		if (!(s[i] == c))
+			fg = 1;
+		if (fg = 1 && (!(s[i] == c)))
+			fg += 1;
+		i++;
+	}
+	return (count);
 }
+
+void	ft_strsplit(char const *s, char c)
+{
+	printf("%d\n", replace_char(s, c));
+}
+
+int		main()
+{
+	ft_strsplit("*hello*fellow***students*", '*');
+	return (0);
+}
+**/

@@ -6,12 +6,9 @@
 /*   By: fserlut <fserlut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/08 05:59:32 by fserlut           #+#    #+#             */
-/*   Updated: 2019/04/12 02:15:10 by fserlut          ###   ########.fr       */
+/*   Updated: 2019/04/19 16:42:21 by fserlut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
-#include <stdlib.h>
 
 int	ft_atoi(const char *str)
 {
