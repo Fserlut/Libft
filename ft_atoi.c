@@ -6,7 +6,7 @@
 /*   By: fserlut <fserlut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/08 05:59:32 by fserlut           #+#    #+#             */
-/*   Updated: 2019/04/20 01:58:07 by fserlut          ###   ########.fr       */
+/*   Updated: 2019/04/21 14:47:51 by fserlut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@ int	ft_atoi(const char *str)
 {
 	int i;
 	int fg;
-	long long int nb;
+	long int nb;
 
 	nb = 0;
 	i = 0;

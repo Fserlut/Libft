@@ -6,24 +6,21 @@
 /*   By: fserlut <fserlut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/12 01:06:38 by fserlut           #+#    #+#             */
-/*   Updated: 2019/04/16 04:19:52 by fserlut          ###   ########.fr       */
+/*   Updated: 2019/04/21 15:35:51 by fserlut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <string.h>
-/**
+
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	unsigned char *ptr;
-	unsigned char *ptr2;
+	char *buf;
+	unsigned char *ptr1;
 
-	ptr = (unsigned char*)dst;
-	ptr2 = (unsigned char*)src;
+	buf = ft_strnew(ft_strlen((unsigned char*)src));
+	ft_strcpy(buf,(unsigned char*)src);
+	ptr1 = (unsigned char*)dst;
 	while (len-- > 0)
-		*ptr++ = *ptr2++;
-	*ptr = '\0';
+		*(ptr1++) = *(buf++);
 	return (dst);
 }
-**/
