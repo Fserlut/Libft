@@ -1,18 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_count_word.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fserlut <fserlut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/16 02:40:42 by fserlut           #+#    #+#             */
-/*   Updated: 2019/04/27 14:38:23 by fserlut          ###   ########.fr       */
+/*   Created: 2019/05/03 23:56:36 by fserlut           #+#    #+#             */
+/*   Updated: 2019/05/04 00:35:40 by fserlut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putchar(char c)
+int			ft_count_word(char *s, char l)
 {
-	write(1, &c, 1);
+	int		i;
+	int		c_word;
+
+	c_word = 0;
+	i = 0;
+	while (s[i])
+	{
+		if ((ft_isalpha(s[i])) && ((s[i - 1] == l) || (i == 0)))
+		{
+			c_word++;
+			i++;
+		}
+		else
+			i++;
+	}
+	return (c_word + 1);
 }

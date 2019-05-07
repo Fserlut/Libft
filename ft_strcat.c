@@ -6,17 +6,17 @@
 /*   By: fserlut <fserlut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/12 05:33:51 by fserlut           #+#    #+#             */
-/*   Updated: 2019/04/13 22:59:46 by fserlut          ###   ########.fr       */
+/*   Updated: 2019/04/27 14:37:16 by fserlut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcat(char *restrict s1, const char *restrict s2)
+char	*ft_strcat(char *s1, const char *s2)
 {
 	int i;
 
-	i = strlen(s1);
+	i = ft_strlen(s1);
 	while (*s2)
 	{
 		s1[i] = *(s2++);

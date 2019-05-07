@@ -5,42 +5,37 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: fserlut <fserlut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/19 18:46:15 by fserlut           #+#    #+#             */
-/*   Updated: 2019/04/19 19:42:50 by fserlut          ###   ########.fr       */
+/*   Created: 2019/04/28 19:20:42 by fserlut           #+#    #+#             */
+/*   Updated: 2019/05/04 00:36:09 by fserlut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-/**int     replace_char(char const *s, char c)
+char			**ft_strsplit(char const *s, char c)
 {
-	int i;
-	int count;
-	int fg;
+	char	**tab;
+	int		i;
+	size_t	lenstr;
 
-	fg = 0;
-	count = 0;
+	if (!s)
+		return (NULL);
+	while (*s == c)
+		++s;
+	if (!(tab = (char**)malloc(ft_count_word((char*)s, c) * sizeof(char*))))
+		return (NULL);
 	i = 0;
-	while (s[i] != '\0')
+	while (*s != '\0')
 	{
-		if (!(s[i] == c))
-			fg = 1;
-		if (fg = 1 && (!(s[i] == c)))
-			fg += 1;
-		i++;
+		lenstr = 0;
+		while (*s != c && *s != '\0' && ++s)
+			++lenstr;
+		if (!(tab[i] = ft_strnew(lenstr)))
+			return (NULL);
+		ft_strncpy(tab[i++], s - lenstr, lenstr);
+		while (*s == c)
+			++s;
 	}
-	return (count);
+	tab[i] = 0;
+	return (tab);
 }
-
-void	ft_strsplit(char const *s, char c)
-{
-	printf("%d\n", replace_char(s, c));
-}
-
-int		main()
-{
-	ft_strsplit("*hello*fellow***students*", '*');
-	return (0);
-}
-**/

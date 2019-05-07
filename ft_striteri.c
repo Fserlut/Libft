@@ -6,7 +6,7 @@
 /*   By: fserlut <fserlut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 03:52:40 by fserlut           #+#    #+#             */
-/*   Updated: 2019/04/15 04:09:15 by fserlut          ###   ########.fr       */
+/*   Updated: 2019/05/04 00:37:56 by fserlut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,14 @@
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	unsigned int i;
+	unsigned int	i;
 
+	if (!s || !f)
+		return ;
 	i = 0;
-	while (*s)
-		(*f)(i++, s++);
+	while (s[i])
+	{
+		(*f)(i, &s[i]);
+		++i;
+	}
 }

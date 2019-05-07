@@ -6,7 +6,7 @@
 /*   By: fserlut <fserlut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/14 23:45:17 by fserlut           #+#    #+#             */
-/*   Updated: 2019/04/15 01:10:42 by fserlut          ###   ########.fr       */
+/*   Updated: 2019/04/28 12:26:09 by fserlut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strnew(size_t size)
 {
-	char *s;
-
-	s = (char*)ft_memalloc(size + 1);
-	return (s);
+	if (size + 1 == 0)
+		return (NULL);
+	else
+		return ((char*)ft_memalloc(size + 1));
 }

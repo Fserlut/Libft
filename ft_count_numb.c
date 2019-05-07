@@ -1,18 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_count_numb.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fserlut <fserlut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/16 02:40:42 by fserlut           #+#    #+#             */
-/*   Updated: 2019/04/27 14:38:23 by fserlut          ###   ########.fr       */
+/*   Created: 2019/04/26 16:37:22 by fserlut           #+#    #+#             */
+/*   Updated: 2019/05/03 02:35:37 by fserlut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putchar(char c)
+int		ft_count_numb(int n)
 {
-	write(1, &c, 1);
+	int	len;
+
+	len = 0;
+	if (n == 0)
+		return (1);
+	if (n < 0)
+		len += 1;
+	while (n)
+	{
+		n /= 10;
+		len += 1;
+	}
+	return (len);
 }

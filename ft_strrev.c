@@ -1,18 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_strrev.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fserlut <fserlut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/16 02:40:42 by fserlut           #+#    #+#             */
-/*   Updated: 2019/04/27 14:38:23 by fserlut          ###   ########.fr       */
+/*   Created: 2019/04/26 16:43:12 by fserlut           #+#    #+#             */
+/*   Updated: 2019/04/26 16:45:57 by fserlut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putchar(char c)
+void	ft_strrev(char *s)
 {
-	write(1, &c, 1);
+	int			i;
+	int			i_end;
+	char		c;
+
+	i = 0;
+	i_end = ft_strlen(s) - 1;
+	while (i < i_end)
+	{
+		c = s[i];
+		s[i++] = s[i_end];
+		s[i_end--] = c;
+	}
 }
