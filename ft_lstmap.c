@@ -1,42 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsplit.c                                      :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fserlut <fserlut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/28 19:20:42 by fserlut           #+#    #+#             */
-/*   Updated: 2019/07/11 00:29:45 by fserlut          ###   ########.fr       */
+/*   Created: 2019/07/23 17:16:38 by fserlut           #+#    #+#             */
+/*   Updated: 2019/07/23 22:14:28 by fserlut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char			**ft_strsplit(char const *s, char c)
+t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
-	char	**tab;
-	int		i;
-	size_t	lenstr;
+	t_list	*res;
+	t_list	*tmp;
 
-	if (!s)
+	if (!lst || !f)
 		return (NULL);
-	while (*s == c)
-		++s;
-	if (!(tab = (char**)malloc((ft_count_word((char*)s, c) + 1) *
-		sizeof(char*))))
+	if (!(tmp = f(lst)))
 		return (NULL);
-	i = 0;
-	while (*s != '\0')
+	res = tmp;
+	while (lst->next)
 	{
-		lenstr = 0;
-		while (*s != c && *s != '\0' && ++s)
-			++lenstr;
-		if (!(tab[i] = ft_strnew(lenstr)))
+		lst = lst->next;
+		if (!(tmp->next = f(lst)))
+		{
+			free(tmp->next);
 			return (NULL);
-		ft_strncpy(tab[i++], s - lenstr, lenstr);
-		while (*s == c)
-			++s;
+		}
+		tmp = tmp->next;
 	}
-	tab[i] = NULL;
-	return (tab);
+	return (res);
 }

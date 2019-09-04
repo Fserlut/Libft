@@ -6,7 +6,7 @@
 /*   By: fserlut <fserlut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/16 00:34:30 by fserlut           #+#    #+#             */
-/*   Updated: 2019/05/03 02:08:28 by fserlut          ###   ########.fr       */
+/*   Updated: 2019/07/08 22:17:05 by fserlut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,8 @@ char			*ft_strtrim(char const *s)
 		while ((s[i_end] == ' ' || s[i_end] == '\t' ||
 				s[i_end] == '\n') && (i_end > i_start))
 			i_end--;
-		s_new = ft_strsub(s, i_start, i_end - i_start + 1);
+		if ((s_new = ft_strsub(s, i_start, i_end - i_start + 1)) == NULL)
+			return (NULL);
 		return (s_new);
 	}
 	return (NULL);

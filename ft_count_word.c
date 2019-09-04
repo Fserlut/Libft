@@ -1,27 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_count_word.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fserlut <fserlut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/11 06:12:09 by fserlut           #+#    #+#             */
-/*   Updated: 2019/07/09 23:26:17 by fserlut          ###   ########.fr       */
+/*   Created: 2019/05/03 23:56:36 by fserlut           #+#    #+#             */
+/*   Updated: 2019/05/04 00:35:40 by fserlut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+int			ft_count_word(char *s, char l)
 {
-	unsigned char *ptr;
-	unsigned char *ptr2;
+	int		i;
+	int		c_word;
 
-	if (dst == NULL && src == NULL)
-		return (NULL);
-	ptr = (unsigned char*)dst;
-	ptr2 = (unsigned char*)src;
-	while (n-- > 0)
-		*ptr++ = *ptr2++;
-	return (dst);
+	c_word = 0;
+	i = 0;
+	while (s[i])
+	{
+		if ((ft_isalpha(s[i])) && ((s[i - 1] == l) || (i == 0)))
+		{
+			c_word++;
+			i++;
+		}
+		else
+			i++;
+	}
+	return (c_word + 1);
 }

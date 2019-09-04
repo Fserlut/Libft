@@ -1,42 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsplit.c                                      :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fserlut <fserlut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/28 19:20:42 by fserlut           #+#    #+#             */
-/*   Updated: 2019/07/11 00:29:45 by fserlut          ###   ########.fr       */
+/*   Created: 2019/07/11 00:17:16 by fserlut           #+#    #+#             */
+/*   Updated: 2019/07/11 18:42:37 by fserlut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char			**ft_strsplit(char const *s, char c)
+t_list	*ft_lstnew(void const *content, size_t content_size)
 {
-	char	**tab;
-	int		i;
-	size_t	lenstr;
+	t_list *tmp;
 
-	if (!s)
+	if (!(tmp = (t_list *)malloc(sizeof(t_list))))
 		return (NULL);
-	while (*s == c)
-		++s;
-	if (!(tab = (char**)malloc((ft_count_word((char*)s, c) + 1) *
-		sizeof(char*))))
-		return (NULL);
-	i = 0;
-	while (*s != '\0')
+	if (!(content))
 	{
-		lenstr = 0;
-		while (*s != c && *s != '\0' && ++s)
-			++lenstr;
-		if (!(tab[i] = ft_strnew(lenstr)))
-			return (NULL);
-		ft_strncpy(tab[i++], s - lenstr, lenstr);
-		while (*s == c)
-			++s;
+		tmp->content = NULL;
+		tmp->content_size = 0;
 	}
-	tab[i] = NULL;
-	return (tab);
+	else
+	{
+		if (!(tmp->content = ft_memalloc(content_size)))
+		{
+			free(tmp);
+			return (NULL);
+		}
+		tmp->content_size = content_size;
+		ft_memcpy(tmp->content, content, content_size);
+	}
+	tmp->next = NULL;
+	return (tmp);
 }

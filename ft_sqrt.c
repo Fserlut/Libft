@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fserlut <fserlut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/11 06:12:09 by fserlut           #+#    #+#             */
-/*   Updated: 2019/07/09 23:26:17 by fserlut          ###   ########.fr       */
+/*   Created: 2019/04/02 21:17:07 by fserlut           #+#    #+#             */
+/*   Updated: 2019/04/07 19:37:08 by fserlut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+int	ft_sqrt(int nb)
 {
-	unsigned char *ptr;
-	unsigned char *ptr2;
+	int	i;
 
-	if (dst == NULL && src == NULL)
-		return (NULL);
-	ptr = (unsigned char*)dst;
-	ptr2 = (unsigned char*)src;
-	while (n-- > 0)
-		*ptr++ = *ptr2++;
-	return (dst);
+	i = 0;
+	if (nb == 1)
+		return (1);
+	if (nb < 0)
+		return (0);
+	while (i <= nb / 2)
+	{
+		if (i * i == nb)
+			return (i);
+		i++;
+	}
+	return (0);
 }

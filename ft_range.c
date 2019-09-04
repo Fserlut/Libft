@@ -1,27 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_range.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fserlut <fserlut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/11 06:12:09 by fserlut           #+#    #+#             */
-/*   Updated: 2019/07/09 23:26:17 by fserlut          ###   ########.fr       */
+/*   Created: 2019/04/03 19:24:33 by fserlut           #+#    #+#             */
+/*   Updated: 2019/07/11 21:57:09 by fserlut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+int	*ft_range(int min, int max)
 {
-	unsigned char *ptr;
-	unsigned char *ptr2;
+	int i;
+	int *arr;
 
-	if (dst == NULL && src == NULL)
+	i = 0;
+	if (min >= max)
 		return (NULL);
-	ptr = (unsigned char*)dst;
-	ptr2 = (unsigned char*)src;
-	while (n-- > 0)
-		*ptr++ = *ptr2++;
-	return (dst);
+	arr = (int*)malloc(sizeof(*arr) * (max - min));
+	if (arr == NULL)
+		return (0);
+	else
+	{
+		while (min < max)
+		{
+			arr[i] = min;
+			min++;
+			i++;
+		}
+	}
+	return (arr);
 }

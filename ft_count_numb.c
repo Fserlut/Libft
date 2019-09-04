@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_count_numb.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fserlut <fserlut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/11 06:12:09 by fserlut           #+#    #+#             */
-/*   Updated: 2019/07/09 23:26:17 by fserlut          ###   ########.fr       */
+/*   Created: 2019/04/26 16:37:22 by fserlut           #+#    #+#             */
+/*   Updated: 2019/05/03 02:35:37 by fserlut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+int		ft_count_numb(int n)
 {
-	unsigned char *ptr;
-	unsigned char *ptr2;
+	int	len;
 
-	if (dst == NULL && src == NULL)
-		return (NULL);
-	ptr = (unsigned char*)dst;
-	ptr2 = (unsigned char*)src;
-	while (n-- > 0)
-		*ptr++ = *ptr2++;
-	return (dst);
+	len = 0;
+	if (n == 0)
+		return (1);
+	if (n < 0)
+		len += 1;
+	while (n)
+	{
+		n /= 10;
+		len += 1;
+	}
+	return (len);
 }
